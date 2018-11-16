@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
+using System;
 using WordCounter.Models;
 
 namespace WordCounter.Tests
@@ -103,7 +104,7 @@ namespace WordCounter.Tests
     }
 
     [TestMethod]
-    public void CheckSentenceContainsWordToGetCount_CheckOutputIsListOfWords_List()
+    public void ConvertSentenceToList_CheckOutputIsListOfWords_List()
     {
       //Arrange
       string inputLetterOrWord = "test";
@@ -112,10 +113,30 @@ namespace WordCounter.Tests
 
       //Act
       List<string> expectedListFromSentence = new List<string>{"this", "is", "a", "test"};
-      List<string> actualListFromSentence = new List<string>{}; actualListFromSentence = testWord.CheckSentenceContainsWordToGetCount();
+      List<string> actualListFromSentence = new List<string>{}; actualListFromSentence = testWord.ConvertSentenceToList();
 
       //Assert
       CollectionAssert.AreEqual(expectedListFromSentence, actualListFromSentence);
     }
+
+    [TestMethod]
+    public void CheckSentenceContainsWordToGetCount_CheckCountofMatchinSentence_Count()
+    {
+      //Arrange
+      string inputLetterOrWord = "cat";
+      string inputStringToCheck = "there is a black cat and a white cat";
+      Word testWord = new Word(inputLetterOrWord, inputStringToCheck);
+
+      //Act
+      int expectedCount = 2;
+      List<string> listFromSentence = new List<string>{};
+      listFromSentence = testWord.ConvertSentenceToList();
+      int actualCount = testWord.CheckSentenceContainsWordToGetCount(listFromSentence);
+
+      //Assert
+      Console.WriteLine("expected:" + expectedCount + " actual:" + actualCount);
+      Assert.AreEqual(expectedCount, actualCount);
+    }
+
   }
 }

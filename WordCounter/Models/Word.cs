@@ -51,18 +51,25 @@ namespace WordCounter.Models
       return countForLetters;
     }
 
-    public List<string> CheckSentenceContainsWordToGetCount()
+    public List<string> ConvertSentenceToList()
     {
       int countForWords = 0;
-      string[] inputArrayToCheck = _inputStringToCheck.Split(' '); // Call Split method
-      // List<string> listFromSentenceToCheck = inputArrayToCheck.OfType<string>().ToList();
-      List<string> listFromArray = new List<string>(inputArrayToCheck); // Use List
-      // constructor
-      return listFromArray;
-      // foreach (string item in listFromArray)
-      // {
-      //   Console.WriteLine($"{item}");
-      // }
+      string[] inputArrayToCheck = _inputStringToCheck.Split(' ');
+      List<string> listFromSentencetoCompare = new List<string>(inputArrayToCheck);
+      return listFromSentencetoCompare;
+    }
+
+    public int CheckSentenceContainsWordToGetCount(List<string> listFromSentence)
+    {
+      int countForWords = 0;
+      foreach (string wordToCompare in listFromSentence)
+      {
+        if(wordToCompare.Contains(_inputLetterOrWord))
+        {
+          countForWords++;
+        }
+      }
+      return countForWords;
     }
   }
 }

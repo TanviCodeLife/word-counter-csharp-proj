@@ -29,22 +29,30 @@
 * _Input1: "C"_
 * _Input2: "Cat"_
 * _Output: 1_
+* _**Check if input word i.e Input2 contains the input letter i.e. Input1 using loop and increment count when upper and lower case letters are present**_
+* _Input1: "C"_
+* _Input2: "CatAN"_
+* _Output: 1_
 * _**Converts the sentence ie. Input2 and splits it into either a List or an Array of strings.**_
+* _Input1: "cat"
 * _Input2: "this is a cat"_
 * _Output2: {"this", "is", "a", "cat"}_
-* _**Compare and checks whether Input1 is contained in Input2 after converting both to lowercase and gives a True or False output**_
-* _Input1: "C" => "c"_
-* _Input2: {"C", "A", "t"} => {"c", "a", "t"}_
-* _Output: True_
-* _**Compare and checks whether Input1 is contained in Input2 after converting both to lowercase and gives a True or False output**_
-* _Input1: "Cat" => "cat"_
-* _Input2: {"this", "is", "a", "Cat"} => {"this", "is", "a", "cat"}_
+* _**Converts the sentence ie. Input2 and splits it into either a List or an Array of strings.**_
+* _Input1: "cat"
+* _Input2: "this is a cat"_
+* _Output: {"this", "is", "a", "cat"}_
+* _**Compare and checks whether Input1 is contained in Input2**_
+* _Input1: "cat"
+* _Input2: this is a cat_
 * _Output: True_
 * _**Takes in input1 and input2 and compares for multiple occurences of input1 in input2 using a loop. Output is the count of occurences**_
-* _Input1: "A" => "a"_
-* _Input2: "Anna" => "anna"_
+* _Input1: "cat"
+* _Input2: "this is a black cat with a white cat"_
 * _Output: 2_
-* _**More specs to come**_
+* _**Takes in mixed case inputs and compares for multiple occurences of input1 in input2 using a loop. Output is the count of occurences**_
+* _Input1: "cat"
+* _Input2: "this is a black CAt with a White cat"_
+* _Output: 2_
 
 
 ### Complete setup/installation instructions
