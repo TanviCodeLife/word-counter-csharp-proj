@@ -28,9 +28,16 @@
 * _**Converts the word ie. Input2 and splits it into either a List or an Array of characters.**_
 * _Input2: "Cat"_
 * _Output2: {"C", "a", "t"}_
+* _**Converts the sentence ie. Input2 and splits it into either a List or an Array of strings.**_
+* _Input2: "this is a cat"_
+* _Output2: {"this", "is", "a", "cat"}_
 * _**Compare and checks whether Input1 is contained in Input2 after converting both to lowercase and gives a True or False output**_
 * _Input1: "C" => "c"_
-* _Input2: "Cat" => "cat"_
+* _Input2: {"C", "A", "t"} => {"c", "a", "t"}_
+* _Output: True_
+* _**Compare and checks whether Input1 is contained in Input2 after converting both to lowercase and gives a True or False output**_
+* _Input1: "Cat" => "cat"_
+* _Input2: {"this", "is", "a", "Cat"} => {"this", "is", "a", "cat"}_
 * _Output: True_
 * _**Takes in input1 and input2 and compares for multiple occurences of input1 in input2 using a loop. Output is the count of occurences**_
 * _Input1: "A" => "a"_
