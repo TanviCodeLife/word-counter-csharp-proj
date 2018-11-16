@@ -20,6 +20,11 @@
 * _Input2: "Cat"_
 * _Output1: "C"_
 * _Output2: "Cat"_
+* _**Takes in a user input word and a sentence in two different variables using the setter methods. Returns those correctly**_
+* _Input1: "Cat"_
+* _Input2: "This is a Cat"_
+* _Output1: "Cat"_
+* _Output2: "This is a Cat"_
 * _**Converts the word ie. Input2 and splits it into either a List or an Array of characters.**_
 * _Input2: "Cat"_
 * _Output2: {"C", "a", "t"}_

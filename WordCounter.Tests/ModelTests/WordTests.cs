@@ -63,5 +63,26 @@ namespace WordCounter.Tests
       Assert.AreEqual(updateInputStringToCheck, resultStringToCheck);
     }
 
+    [TestMethod]
+    public void SetInputLetterOrWordAndStringToCheck_UpdatePropertiesWithWordsAndSentence_String()
+    {
+      //Arrange
+      string inputLetterOrWord = "A";
+      string inputStringToCheck = "CAT";
+      Word testWord = new Word(inputLetterOrWord, inputStringToCheck);
+
+      //Act
+      string updateInputLetterOrWord = "CAT";
+      testWord.SetInputLetterOrWord(updateInputLetterOrWord);
+      string resultLetter = testWord.GetInputLetterOrWord();
+      string updateInputStringToCheck = "THIS IS A CAT";
+      testWord.SetInputStringToCheck(updateInputStringToCheck);
+      string resultStringToCheck = testWord.GetInputStringToCheck();
+
+      //Assert
+      Assert.AreEqual(updateInputLetterOrWord, resultLetter);
+      Assert.AreEqual(updateInputStringToCheck, resultStringToCheck);
+    }
+
   }
 }
