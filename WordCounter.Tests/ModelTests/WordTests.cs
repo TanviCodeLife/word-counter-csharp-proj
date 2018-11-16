@@ -163,14 +163,15 @@ namespace WordCounter.Tests
 
       //Act
       List<string> expectedListFromSentence = new List<string>{"this", "is", "a", "test"};
-      List<string> actualListFromSentence = new List<string>{}; actualListFromSentence = testWord.ConvertSentenceToList(inputStringToCheck);
+      List<string> actualListFromSentence = new List<string>{};
+      actualListFromSentence = testWord.ConvertSentenceToList(inputStringToCheck);
 
       //Assert
       CollectionAssert.AreEqual(expectedListFromSentence, actualListFromSentence);
     }
 
     [TestMethod]
-    public void CheckSentenceContainsWordToGetCount_CheckCountofMatchinSentence_Count()
+    public void CheckSentenceContainsWordToGetCount_CheckCountofMatchInSentence_Count()
     {
       //Arrange
       string inputLetterOrWord = "cat";
@@ -182,6 +183,27 @@ namespace WordCounter.Tests
       List<string> listFromSentence = new List<string>{};
       listFromSentence = testWord.ConvertSentenceToList(inputStringToCheck);
       int actualCount = testWord.CheckSentenceContainsWordToGetCount(listFromSentence, inputLetterOrWord);
+
+      //Assert
+      Console.WriteLine("expected:" + expectedCount + " actual:" + actualCount);
+      Assert.AreEqual(expectedCount, actualCount);
+    }
+
+    [TestMethod]
+    public void CheckSentenceContainsWordToGetCountMixedCase_CheckCountofMatchInSentence_Count()
+    {
+      //Arrange
+      string inputLetterOrWord = "cAt";
+      string inputStringToCheck = "there is a black caT and a white Cat";
+      Word testWord = new Word(inputLetterOrWord, inputStringToCheck);
+
+      //Act
+      int expectedCount = 2;
+      string convertedLetterToLower = testWord.ConvertLetterOrWordToLowerCase();
+      string convertedStringToLower = testWord.ConvertStringToLowerCase();
+      List<string> listFromSentence = new List<string>{};
+      listFromSentence = testWord.ConvertSentenceToList(convertedStringToLower);
+      int actualCount = testWord.CheckSentenceContainsWordToGetCount(listFromSentence, convertedLetterToLower);
 
       //Assert
       Console.WriteLine("expected:" + expectedCount + " actual:" + actualCount);
