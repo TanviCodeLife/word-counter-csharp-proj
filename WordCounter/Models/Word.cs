@@ -16,9 +16,19 @@ namespace WordCounter.Models
       return _inputLetterOrWord;
     }
 
+    public void SetInputLetterOrWord(string newInputLetterOrWord)
+    {
+      _inputLetterOrWord = newInputLetterOrWord;
+    }
+
     public string GetInputStringToCheck()
     {
       return _inputStringToCheck;
+    }
+
+    public void SetInputStringToCheck(string newInputStringToCheck)
+    {
+      _inputStringToCheck = newInputStringToCheck;
     }
   }
 }
