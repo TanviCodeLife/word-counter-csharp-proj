@@ -51,17 +51,18 @@ namespace WordCounter.Models
       return countForLetters;
     }
 
-    // public int CheckSentenceContainsWord()
-    // {
-    //   string csv = "this is a sentence"; // The input string
-    //   string[] parts = csv.Split(' '); // Call Split method
-    //   Console.WriteLine(parts.GetType());
-    //   List<string> listFromArray = new List<string>(parts); // Use List constructor
-    //   Console.WriteLine(listFromArray.GetType());
-    //   foreach (string item in listFromArray)
-    //   {
-    //     Console.WriteLine($"{item}");
-    //   }
-    // }
+    public List<string> CheckSentenceContainsWordToGetCount()
+    {
+      int countForWords = 0;
+      string[] inputArrayToCheck = _inputStringToCheck.Split(' '); // Call Split method
+      // List<string> listFromSentenceToCheck = inputArrayToCheck.OfType<string>().ToList();
+      List<string> listFromArray = new List<string>(inputArrayToCheck); // Use List
+      // constructor
+      return listFromArray;
+      // foreach (string item in listFromArray)
+      // {
+      //   Console.WriteLine($"{item}");
+      // }
+    }
   }
 }

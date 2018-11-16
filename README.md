@@ -25,9 +25,10 @@
 * _Input2: "This is a Cat"_
 * _Output1: "Cat"_
 * _Output2: "This is a Cat"_
-* _**Converts the word ie. Input2 and splits it into either a List or an Array of characters.**_
+* _**Check if input word i.e Input2 contains the input letter i.e. Input1 using loop and increment count**_
+* _Input1: "C"_
 * _Input2: "Cat"_
-* _Output2: {"C", "a", "t"}_
+* _Output: 1_
 * _**Converts the sentence ie. Input2 and splits it into either a List or an Array of strings.**_
 * _Input2: "this is a cat"_
 * _Output2: {"this", "is", "a", "cat"}_

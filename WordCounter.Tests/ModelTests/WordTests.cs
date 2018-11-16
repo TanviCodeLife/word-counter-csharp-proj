@@ -55,6 +55,7 @@ namespace WordCounter.Tests
       string updateInputLetterOrWord = "A";
       testWord.SetInputLetterOrWord(updateInputLetterOrWord);
       string resultLetter = testWord.GetInputLetterOrWord();
+
       string updateInputStringToCheck = "ATOM";
       testWord.SetInputStringToCheck(updateInputStringToCheck);
       string resultStringToCheck = testWord.GetInputStringToCheck();
@@ -102,19 +103,19 @@ namespace WordCounter.Tests
     }
 
     [TestMethod]
-    public void CheckWordContainsLetter_GetCountOfLettersAfterCaseMatch_Int()
+    public void CheckSentenceContainsWordToGetCount_CheckOutputIsListOfWords_List()
     {
       //Arrange
-      string inputLetterOrWord = "A";
-      string inputStringToCheck = "CaTAN";
-      int expectedCount = 2;
+      string inputLetterOrWord = "test";
+      string inputStringToCheck = "this is a test";
       Word testWord = new Word(inputLetterOrWord, inputStringToCheck);
 
       //Act
-      int actualCount = testWord.CheckWordContainsLetterToGetCount();
+      List<string> expectedListFromSentence = new List<string>{"this", "is", "a", "test"};
+      List<string> actualListFromSentence = new List<string>{}; actualListFromSentence = testWord.CheckSentenceContainsWordToGetCount();
 
       //Assert
-      Assert.AreEqual(expectedCount, actualCount);
+      CollectionAssert.AreEqual(expectedListFromSentence, actualListFromSentence);
     }
   }
 }
