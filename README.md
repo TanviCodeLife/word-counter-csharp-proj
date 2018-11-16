@@ -23,10 +23,14 @@
 * _**Converts the word ie. Input2 and splits it into either a List or an Array of characters.**_
 * _Input2: "Cat"_
 * _Output2: {"C", "a", "t"}_
-* _**Compare and checks whether Input1 is contained in Input2 and gives a True or False output**_
-* _Input1: "C"_
-* _Input2: "Cat"_
+* _**Compare and checks whether Input1 is contained in Input2 after converting both to lowercase and gives a True or False output**_
+* _Input1: "C" => "c"_
+* _Input2: "Cat" => "cat"_
 * _Output: True_
+* _**Takes in input1 and input2 and compares for multiple occurences of input1 in input2 using a loop. Output is the count of occurences**_
+* _Input1: "A" => "a"_
+* _Input2: "Anna" => "anna"_
+* _Output: 2_
 * _**More specs to come**_
 
 
