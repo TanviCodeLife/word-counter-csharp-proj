@@ -34,16 +34,24 @@ namespace WordCounter.Models
       _inputStringToCheck = newInputStringToCheck;
     }
 
-    public int CheckWordContainsLetterToGetCount()
+    public string ConvertStringToLowerCase(){
+      string stringToCheck = _inputStringToCheck.ToLower();
+      return stringToCheck;
+    }
+
+    public string ConvertLetterOrWordToLowerCase(){
+      string letterOrWord = _inputLetterOrWord.ToLower();
+      return letterOrWord;
+    }
+
+    public int CheckWordContainsLetterToGetCount(string inputLetter, string inputString)
     {
       int countForLetters = 0;
-      string inputString = _inputStringToCheck.ToLower();
-      string inputLetter = _inputLetterOrWord.ToLower();
       for (int i = 0; i < inputString.Length; i++)
       {
         String charToString = inputString[i].ToString();
 
-        if(charToString.Contains(inputLetter))
+        if(charToString == inputLetter)
         {
           countForLetters++;
         }
@@ -51,20 +59,21 @@ namespace WordCounter.Models
       return countForLetters;
     }
 
-    public List<string> ConvertSentenceToList()
+
+    public List<string> ConvertSentenceToList(string stringToCheck)
     {
       int countForWords = 0;
-      string[] inputArrayToCheck = _inputStringToCheck.Split(' ');
+      string[] inputArrayToCheck = stringToCheck.Split(' ');
       List<string> listFromSentencetoCompare = new List<string>(inputArrayToCheck);
       return listFromSentencetoCompare;
     }
 
-    public int CheckSentenceContainsWordToGetCount(List<string> listFromSentence)
+    public int CheckSentenceContainsWordToGetCount(List<string> listFromSentence, string letterOrWordToFind)
     {
       int countForWords = 0;
       foreach (string wordToCompare in listFromSentence)
       {
-        if(wordToCompare.Contains(_inputLetterOrWord))
+        if(wordToCompare == letterOrWordToFind)
         {
           countForWords++;
         }

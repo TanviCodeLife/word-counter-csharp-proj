@@ -88,6 +88,38 @@ namespace WordCounter.Tests
     }
 
     [TestMethod]
+    public void ConvertStringToLowerCase_ConvertInputSentenceWordToLower_LowerCaseString()
+    {
+      //Arrange
+      string inputLetterOrWord = "a";
+      string inputStringToCheck = "CATAN";
+      Word testWord = new Word(inputLetterOrWord, inputStringToCheck);
+
+      //Act
+      string actualConvertedStringToLower = testWord.ConvertStringToLowerCase();
+      string expectedStringAfterLower = "catan";
+
+      //Assert
+      Assert.AreEqual(expectedStringAfterLower, actualConvertedStringToLower);
+    }
+
+    [TestMethod]
+    public void ConvertLetterOrWordToLowerCase_ConvertToLower_LowerCaseString()
+    {
+      //Arrange
+      string inputLetterOrWord = "A";
+      string inputStringToCheck = "cat";
+      Word testWord = new Word(inputLetterOrWord, inputStringToCheck);
+
+      //Act
+      string actualConvertedLetterToLower = testWord.ConvertLetterOrWordToLowerCase();
+      string expectedLetterAfterLower = "a";
+
+      //Assert
+      Assert.AreEqual(expectedLetterAfterLower, actualConvertedLetterToLower);
+    }
+
+    [TestMethod]
     public void CheckWordContainsLetter_GetCountOfLetter_Int()
     {
       //Arrange
@@ -97,9 +129,27 @@ namespace WordCounter.Tests
       Word testWord = new Word(inputLetterOrWord, inputStringToCheck);
 
       //Act
-      int actualCount = testWord.CheckWordContainsLetterToGetCount();
+      int actualCount = testWord.CheckWordContainsLetterToGetCount(inputLetterOrWord, inputStringToCheck);
 
       //Assert
+      Assert.AreEqual(expectedCount, actualCount);
+    }
+
+    [TestMethod]
+    public void CheckWordContainsLetter_GetCountOfLettersAfterCaseMatch_Int()
+    {
+      //Arrange
+      string inputLetterOrWord = "A";
+      string inputStringToCheck = "CaTAN";
+      int expectedCount = 2;
+      Word testWord = new Word(inputLetterOrWord, inputStringToCheck);
+
+       //Act
+      string convertedLetterToLower = testWord.ConvertLetterOrWordToLowerCase();
+      string convertedStringToLower = testWord.ConvertStringToLowerCase();
+      int actualCount = testWord.CheckWordContainsLetterToGetCount(convertedLetterToLower, convertedStringToLower);
+
+       //Assert
       Assert.AreEqual(expectedCount, actualCount);
     }
 
@@ -113,7 +163,7 @@ namespace WordCounter.Tests
 
       //Act
       List<string> expectedListFromSentence = new List<string>{"this", "is", "a", "test"};
-      List<string> actualListFromSentence = new List<string>{}; actualListFromSentence = testWord.ConvertSentenceToList();
+      List<string> actualListFromSentence = new List<string>{}; actualListFromSentence = testWord.ConvertSentenceToList(inputStringToCheck);
 
       //Assert
       CollectionAssert.AreEqual(expectedListFromSentence, actualListFromSentence);
@@ -130,8 +180,8 @@ namespace WordCounter.Tests
       //Act
       int expectedCount = 2;
       List<string> listFromSentence = new List<string>{};
-      listFromSentence = testWord.ConvertSentenceToList();
-      int actualCount = testWord.CheckSentenceContainsWordToGetCount(listFromSentence);
+      listFromSentence = testWord.ConvertSentenceToList(inputStringToCheck);
+      int actualCount = testWord.CheckSentenceContainsWordToGetCount(listFromSentence, inputLetterOrWord);
 
       //Assert
       Console.WriteLine("expected:" + expectedCount + " actual:" + actualCount);
