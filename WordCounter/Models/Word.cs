@@ -2,19 +2,23 @@ namespace WordCounter.Models
 {
   public class Word
   {
-    private string _inputLetter;
-    // private string _inputWord;
+    private string _inputLetterOrWord;
+    private string _inputStringToCheck;
 
-    public Word(string inputLetter) //string inputWord to be passed later
+    public Word(string inputLetterOrWord, string inputStringToCheck)
     {
-      _inputLetter = inputLetter;
-      // _inputWord = inputWord;
+      _inputLetterOrWord = inputLetterOrWord;
+      _inputStringToCheck = inputStringToCheck;
     }
 
-    public string GetInputLetter()
+    public string GetInputLetterOrWord()
     {
-      return _inputLetter;
+      return _inputLetterOrWord;
     }
 
+    public string GetInputStringToCheck()
+    {
+      return _inputStringToCheck;
+    }
   }
 }
