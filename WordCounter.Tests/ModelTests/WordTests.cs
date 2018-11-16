@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using WordCounter.Models;
 
 namespace WordCounter.Tests
@@ -82,6 +83,22 @@ namespace WordCounter.Tests
       //Assert
       Assert.AreEqual(updateInputLetterOrWord, resultLetter);
       Assert.AreEqual(updateInputStringToCheck, resultStringToCheck);
+    }
+
+    [TestMethod]
+    public void CheckWordContainsLetter_SplitAndConvertToList_List()
+    {
+      //Arrange
+      string inputLetterOrWord = "A";
+      string inputStringToCheck = "CATAN";
+      int expectedCount = 2;
+      Word testWord = new Word(inputLetterOrWord, inputStringToCheck);
+
+      //Act
+      int actualCount = testWord.CheckWordContainsLetter();
+
+      //Assert
+      Assert.AreEqual(expectedCount, actualCount);
     }
 
   }

@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using System;
+
 namespace WordCounter.Models
 {
   public class Word
@@ -29,6 +32,20 @@ namespace WordCounter.Models
     public void SetInputStringToCheck(string newInputStringToCheck)
     {
       _inputStringToCheck = newInputStringToCheck;
+    }
+
+    public int CheckWordContainsLetter()
+    {
+      int countForLetters = 0;
+      for (int i = 0; i < _inputStringToCheck.Length; i++)
+      {
+        String charToString = _inputStringToCheck[i].ToString();
+        if(charToString.Contains(_inputLetterOrWord))
+        {
+          countForLetters++;
+        }
+      }
+      return countForLetters;
     }
   }
 }
