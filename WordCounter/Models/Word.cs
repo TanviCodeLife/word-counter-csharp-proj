@@ -34,18 +34,34 @@ namespace WordCounter.Models
       _inputStringToCheck = newInputStringToCheck;
     }
 
-    public int CheckWordContainsLetter()
+    public int CheckWordContainsLetterToGetCount()
     {
       int countForLetters = 0;
-      for (int i = 0; i < _inputStringToCheck.Length; i++)
+      string inputString = _inputStringToCheck.ToLower();
+      string inputLetter = _inputLetterOrWord.ToLower();
+      for (int i = 0; i < inputString.Length; i++)
       {
-        String charToString = _inputStringToCheck[i].ToString();
-        if(charToString.Contains(_inputLetterOrWord))
+        String charToString = inputString[i].ToString();
+
+        if(charToString.Contains(inputLetter))
         {
           countForLetters++;
         }
       }
       return countForLetters;
     }
+
+    // public int CheckSentenceContainsWord()
+    // {
+    //   string csv = "this is a sentence"; // The input string
+    //   string[] parts = csv.Split(' '); // Call Split method
+    //   Console.WriteLine(parts.GetType());
+    //   List<string> listFromArray = new List<string>(parts); // Use List constructor
+    //   Console.WriteLine(listFromArray.GetType());
+    //   foreach (string item in listFromArray)
+    //   {
+    //     Console.WriteLine($"{item}");
+    //   }
+    // }
   }
 }

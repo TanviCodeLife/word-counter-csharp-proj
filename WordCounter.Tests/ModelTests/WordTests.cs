@@ -86,7 +86,7 @@ namespace WordCounter.Tests
     }
 
     [TestMethod]
-    public void CheckWordContainsLetter_SplitAndConvertToList_List()
+    public void CheckWordContainsLetter_GetCountOfLetter_Int()
     {
       //Arrange
       string inputLetterOrWord = "A";
@@ -95,11 +95,26 @@ namespace WordCounter.Tests
       Word testWord = new Word(inputLetterOrWord, inputStringToCheck);
 
       //Act
-      int actualCount = testWord.CheckWordContainsLetter();
+      int actualCount = testWord.CheckWordContainsLetterToGetCount();
 
       //Assert
       Assert.AreEqual(expectedCount, actualCount);
     }
 
+    [TestMethod]
+    public void CheckWordContainsLetter_GetCountOfLettersAfterCaseMatch_Int()
+    {
+      //Arrange
+      string inputLetterOrWord = "A";
+      string inputStringToCheck = "CaTAN";
+      int expectedCount = 2;
+      Word testWord = new Word(inputLetterOrWord, inputStringToCheck);
+
+      //Act
+      int actualCount = testWord.CheckWordContainsLetterToGetCount();
+
+      //Assert
+      Assert.AreEqual(expectedCount, actualCount);
+    }
   }
 }
