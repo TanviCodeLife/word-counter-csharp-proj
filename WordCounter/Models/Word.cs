@@ -80,10 +80,19 @@ namespace WordCounter.Models
       return countForWords;
     }
 
-   // public int CheckIfInputStringHasSpecialChar()
-   // {
-   //   string[] source = text.Split('.', '?', '!', ' ', ';', ':', ',', '\'');
-   // }
+    public string RemoveSpecialCharactersFromInput(string stringToParse)
+    {
+      string[] chars = new string[] { ",", ".", "/", "!", "@", "#", "$", "%", "^", "&", "*", "'", "\"", ";", "_", "(", ")", ":", "|", "[", "]", "\'"};
+      //Iterate the number of times based on the String array length.
+      for (int i = 0; i < chars.Length; i++)
+      {
+        if (stringToParse.Contains(chars[i]))
+        {
+          stringToParse = stringToParse.Replace(chars[i], "");
+        }
+      }
+      return stringToParse;
+    }
 
   }
 }

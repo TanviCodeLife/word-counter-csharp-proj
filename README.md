@@ -57,13 +57,16 @@
 * _Input1: "cat"
 * _Input2: "this is a black CAt with a White cat in a cathedral"_
 * _Output: 2_
+* _**Add functionality to remove special characters and split a sentence into an array/list**_
+* _Input: "I'm in a cathedral"
+* _Output: "I m in a cathedral"_
 
 ### Complete setup/installation instructions
-1. _Go to GitHub profile and project @ [TanviCodeLife]()_
+1. _Go to GitHub profile and project @ [TanviCodeLife](https://github.com/TanviCodeLife/word-counter-csharp-proj)_
 2. _Use #git clone <project url> command to pull it to a local repository in your Home directory._
-3. _Go to project folder anagram and open the index.html file in your browser._
-4. _Input any number and click submit_
-4. _Beep Boop Output will be displayed_
+3. _Go to project folder and cd into word-counter-csharp-proj/WordCounter.Solution/WordCounter.Tests directory from your bash terminal_
+4. _run #dotnet test_
+4. _All test results will be displayed in the console._
 
 ### Technologies used
 1. **CSharp**

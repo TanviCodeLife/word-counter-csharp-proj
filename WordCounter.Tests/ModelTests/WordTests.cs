@@ -190,7 +190,7 @@ namespace WordCounter.Tests
     }
 
     [TestMethod]
-    public void CheckSentenceContainsWordToGetCountMixedCase_CheckCountofMatchInSentence_Count()
+    public void CheckSentenceContainsWordToGetCount_CheckCountofMatchInSentenceMixedCase_Count()
     {
       //Arrange
       string inputLetterOrWord = "cAt";
@@ -211,19 +211,20 @@ namespace WordCounter.Tests
     }
 
     [TestMethod]
-    public void PickBetweenLetterOrWordMatch_CheckCountofMatchInSentence_Count()
+    public void RemoveSpecialCharactersFromInput_CheckCountofMatchInSentence_Count()
     {
       //Arrange
       string inputLetterOrWord = "cAt";
-      string inputStringToCheck = "there is a bLack caT and a white CAt in a cathedral";
+      string inputStringToCheck = "there is a bLack caT and a white CAt in the cathedral!!";
       Word testWord = new Word(inputLetterOrWord, inputStringToCheck);
 
       //Act
       int expectedCount = 2;
       string convertedLetterToLower = testWord.ConvertLetterOrWordToLowerCase();
       string convertedStringToLower = testWord.ConvertStringToLowerCase();
+      string parsedStringToCheck = testWord.RemoveSpecialCharactersFromInput(convertedStringToLower);
       List<string> listFromSentence = new List<string>{};
-      listFromSentence = testWord.ConvertSentenceToList(convertedStringToLower);
+      listFromSentence = testWord.ConvertSentenceToList(parsedStringToCheck);
       int actualCount = testWord.CheckSentenceContainsWordToGetCount(listFromSentence, convertedLetterToLower);
 
       //Assert
