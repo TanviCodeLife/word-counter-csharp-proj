@@ -53,7 +53,10 @@
 * _Input1: "cat"
 * _Input2: "this is a black CAt with a White cat"_
 * _Output: 2_
-
+* _**Takes in mixed case inputs and compares for multiple occurences of input1 in input2 while ignoring words that might be superset of the input1 like "cat" in "cat"hedral using a loop. Output is the count of occurences**_
+* _Input1: "cat"
+* _Input2: "this is a black CAt with a White cat in a cathedral"_
+* _Output: 2_
 
 ### Complete setup/installation instructions
 1. _Go to GitHub profile and project @ [TanviCodeLife]()_

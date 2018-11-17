@@ -194,7 +194,28 @@ namespace WordCounter.Tests
     {
       //Arrange
       string inputLetterOrWord = "cAt";
-      string inputStringToCheck = "there is a black caT and a white Cat";
+      string inputStringToCheck = "there is a bLack caT and a white CAt";
+      Word testWord = new Word(inputLetterOrWord, inputStringToCheck);
+
+      //Act
+      int expectedCount = 2;
+      string convertedLetterToLower = testWord.ConvertLetterOrWordToLowerCase();
+      string convertedStringToLower = testWord.ConvertStringToLowerCase();
+      List<string> listFromSentence = new List<string>{};
+      listFromSentence = testWord.ConvertSentenceToList(convertedStringToLower);
+      int actualCount = testWord.CheckSentenceContainsWordToGetCount(listFromSentence, convertedLetterToLower);
+
+      //Assert
+      Console.WriteLine("expected:" + expectedCount + " actual:" + actualCount);
+      Assert.AreEqual(expectedCount, actualCount);
+    }
+
+    [TestMethod]
+    public void PickBetweenLetterOrWordMatch_CheckCountofMatchInSentence_Count()
+    {
+      //Arrange
+      string inputLetterOrWord = "cAt";
+      string inputStringToCheck = "there is a bLack caT and a white CAt in a cathedral";
       Word testWord = new Word(inputLetterOrWord, inputStringToCheck);
 
       //Act

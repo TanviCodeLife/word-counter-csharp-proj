@@ -62,7 +62,6 @@ namespace WordCounter.Models
 
     public List<string> ConvertSentenceToList(string stringToCheck)
     {
-      int countForWords = 0;
       string[] inputArrayToCheck = stringToCheck.Split(' ');
       List<string> listFromSentencetoCompare = new List<string>(inputArrayToCheck);
       return listFromSentencetoCompare;
@@ -80,5 +79,11 @@ namespace WordCounter.Models
       }
       return countForWords;
     }
+
+   // public int CheckIfInputStringHasSpecialChar()
+   // {
+   //   string[] source = text.Split('.', '?', '!', ' ', ';', ':', ',', '\'');
+   // }
+
   }
 }
