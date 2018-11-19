@@ -7042,11 +7042,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/Tanvi/Desktop/WordCounter.Solution/WordCounter/WordCounter.csproj",
+      "projectUniqueName": "/Users/Tanvi/Desktop/word-counter-csharp-proj/WordCounter/WordCounter.csproj",
       "projectName": "WordCounter",
-      "projectPath": "/Users/Tanvi/Desktop/WordCounter.Solution/WordCounter/WordCounter.csproj",
+      "projectPath": "/Users/Tanvi/Desktop/word-counter-csharp-proj/WordCounter/WordCounter.csproj",
       "packagesPath": "/Users/Tanvi/.nuget/packages/",
-      "outputPath": "/Users/Tanvi/Desktop/WordCounter.Solution/WordCounter/obj/",
+      "outputPath": "/Users/Tanvi/Desktop/word-counter-csharp-proj/WordCounter/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/Tanvi/.nuget/NuGet/NuGet.Config"

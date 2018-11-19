@@ -34,14 +34,14 @@ namespace WordCounter.Models
       _inputStringToCheck = newInputStringToCheck;
     }
 
-    public string ConvertStringToLowerCase(){
-      string stringToCheck = _inputStringToCheck.ToLower();
-      return stringToCheck;
-    }
-
     public string ConvertLetterOrWordToLowerCase(){
       string letterOrWord = _inputLetterOrWord.ToLower();
       return letterOrWord;
+    }
+
+    public string ConvertStringToLowerCase(){
+      string stringToCheck = _inputStringToCheck.ToLower();
+      return stringToCheck;
     }
 
     public int CheckWordContainsLetterToGetCount(string inputLetter, string inputString)
@@ -55,6 +55,7 @@ namespace WordCounter.Models
         {
           countForLetters++;
         }
+
       }
       return countForLetters;
     }
@@ -76,6 +77,7 @@ namespace WordCounter.Models
         {
           countForWords++;
         }
+
       }
       return countForWords;
     }
@@ -92,6 +94,23 @@ namespace WordCounter.Models
         }
       }
       return stringToParse;
+    }
+
+    public int RunCountParseLogicBasedOnWordOrSentenceInput(string inputStringToMatch, string inputWordOrSentenceToParse)
+    {
+      int count = 0;
+      if(inputWordOrSentenceToParse.Contains(" "))
+      {
+        List<string> listFromSentence = new List<string>{};
+        listFromSentence = this.ConvertSentenceToList(inputWordOrSentenceToParse);
+        count = this.CheckSentenceContainsWordToGetCount(listFromSentence, inputStringToMatch);
+      }
+      else
+      {
+        count = this.CheckWordContainsLetterToGetCount(inputStringToMatch, inputWordOrSentenceToParse);
+      }
+       return count;
+
     }
 
   }

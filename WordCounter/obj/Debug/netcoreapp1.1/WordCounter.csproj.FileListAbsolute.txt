@@ -5,3 +5,10 @@
 /Users/Tanvi/Desktop/WordCounter.Solution/WordCounter/obj/Debug/netcoreapp1.1/WordCounter.AssemblyInfo.cs
 /Users/Tanvi/Desktop/WordCounter.Solution/WordCounter/obj/Debug/netcoreapp1.1/WordCounter.dll
 /Users/Tanvi/Desktop/WordCounter.Solution/WordCounter/obj/Debug/netcoreapp1.1/WordCounter.pdb
+/Users/Tanvi/Desktop/word-counter-csharp-proj/WordCounter/bin/Debug/netcoreapp1.1/WordCounter.deps.json
+/Users/Tanvi/Desktop/word-counter-csharp-proj/WordCounter/bin/Debug/netcoreapp1.1/WordCounter.dll
+/Users/Tanvi/Desktop/word-counter-csharp-proj/WordCounter/bin/Debug/netcoreapp1.1/WordCounter.pdb
+/Users/Tanvi/Desktop/word-counter-csharp-proj/WordCounter/obj/Debug/netcoreapp1.1/WordCounter.csproj.CoreCompileInputs.cache
+/Users/Tanvi/Desktop/word-counter-csharp-proj/WordCounter/obj/Debug/netcoreapp1.1/WordCounter.AssemblyInfo.cs
+/Users/Tanvi/Desktop/word-counter-csharp-proj/WordCounter/obj/Debug/netcoreapp1.1/WordCounter.dll
+/Users/Tanvi/Desktop/word-counter-csharp-proj/WordCounter/obj/Debug/netcoreapp1.1/WordCounter.pdb

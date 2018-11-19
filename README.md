@@ -1,4 +1,4 @@
-# _Anagram_
+# _Word Counter_
 #### Week 1 CSharp Independent Project at Epicodus, 10.16.2018
 
 ### Created By
@@ -37,10 +37,6 @@
 * _Input1: "cat"
 * _Input2: "this is a cat"_
 * _Output2: {"this", "is", "a", "cat"}_
-* _**Converts the sentence ie. Input2 and splits it into either a List or an Array of strings.**_
-* _Input1: "cat"
-* _Input2: "this is a cat"_
-* _Output: {"this", "is", "a", "cat"}_
 * _**Compare and checks whether Input1 is contained in Input2**_
 * _Input1: "cat"
 * _Input2: this is a cat_
