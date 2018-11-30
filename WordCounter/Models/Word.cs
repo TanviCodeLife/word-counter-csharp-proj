@@ -7,12 +7,14 @@ namespace WordCounter.Models
   {
     private string _inputLetterOrWord;
     private string _inputStringToCheck;
+    private int _id;
     private static List<Word> _instances = new List<Word> {};
 
     public Word(string inputLetterOrWord, string inputStringToCheck)
     {
       _inputLetterOrWord = inputLetterOrWord;
       _inputStringToCheck = inputStringToCheck;
+      _id = _instances.Count;
       _instances.Add(this);
     }
 
@@ -41,9 +43,19 @@ namespace WordCounter.Models
       return _instances;
     }
 
+    public static Word Find(int searchId)
+    {
+      return _instances[searchId-1];
+    }
+
     public static void ClearAll()
     {
       _instances.Clear();
+    }
+
+    public int GetId()
+    {
+      return _id;
     }
 
     public string ConvertLetterOrWordToLowerCase(){
@@ -122,7 +134,6 @@ namespace WordCounter.Models
         count = this.CheckWordContainsLetterToGetCount(inputStringToMatch, inputWordOrSentenceToParse);
       }
        return count;
-
     }
 
   }
