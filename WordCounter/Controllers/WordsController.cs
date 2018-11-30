@@ -9,8 +9,7 @@ namespace WordCounter.Controllers
     [HttpGet("/words/new")]
     public ActionResult New()
     {
-      //return View();
-      return new EmptyResult();
+      return View();
     }
 
   }
