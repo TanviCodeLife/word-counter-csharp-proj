@@ -6,8 +6,13 @@ using WordCounter.Models;
 namespace WordCounter.Tests
 {
   [TestClass]
-  public class WordTest
+  public class WordTest : IDisposable
   {
+
+    public void Dispose()
+    {
+      Word.ClearAll();
+    }
 
     [TestMethod]
     public void WordConstructor_CreatesInstanceOfWord_Word()
@@ -93,6 +98,20 @@ namespace WordCounter.Tests
       Assert.AreEqual("CAT", resultWord);
       Assert.AreEqual("THIS IS A CAT", resultStringToCheck);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_List()
+    {
+      // Arrange
+      List<Word> newWordList = new List<Word> { };
+
+      // Act
+      List<Word> result = Word.GetAll();
+
+      // Assert
+      CollectionAssert.AreEqual(newWordList, result);
+    }
+
 
     [TestMethod]
     public void ConvertLetterOrWordToLowerCase_ConvertToLower_LowerCaseString()

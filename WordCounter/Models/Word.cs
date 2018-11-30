@@ -7,11 +7,13 @@ namespace WordCounter.Models
   {
     private string _inputLetterOrWord;
     private string _inputStringToCheck;
+    private static List<Word> _instances = new List<Word> {};
 
     public Word(string inputLetterOrWord, string inputStringToCheck)
     {
       _inputLetterOrWord = inputLetterOrWord;
       _inputStringToCheck = inputStringToCheck;
+      _instances.Add(this);
     }
 
     public string GetInputLetterOrWord()
@@ -32,6 +34,18 @@ namespace WordCounter.Models
     public void SetInputStringToCheck(string newInputStringToCheck)
     {
       _inputStringToCheck = newInputStringToCheck;
+    }
+
+    public static List<Word> GetAll()
+    {
+      Word newWord = new Word("Cat", "this is a cat");
+      _instances = new List<Word>{ newWord };
+      return _instances;
+    }
+
+    public static void ClearAll()
+    {
+      _instances.Clear();
     }
 
     public string ConvertLetterOrWordToLowerCase(){
