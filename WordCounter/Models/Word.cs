@@ -55,7 +55,7 @@ namespace WordCounter.Models
 
     public static Word Find(int searchId)
     {
-      return _instances[searchId];
+      return _instances[searchId-1];
     }
 
 

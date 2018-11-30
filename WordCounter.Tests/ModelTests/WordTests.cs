@@ -132,7 +132,7 @@ namespace WordCounter.Tests
     }
 
     [TestMethod]
-    public void Find_ReturnsCorrectItem_BagItem()
+    public void Find_ReturnsCorrectWordandPhrase_Word()
     {
       //Arrange
       //Arrange
