@@ -25,6 +25,21 @@ namespace WordCounter.Tests
     }
 
     [TestMethod]
+    public void Index_HasCorrectModelType_WordandPhraseList()
+    {
+      //Arrange
+      WordsController controller = new WordsController();
+      ViewResult indexView = controller.Index() as ViewResult;
+
+      //Act
+      var result = indexView.ViewData.Model;
+
+      //Assert
+      Assert.IsInstanceOfType(result, typeof(List<Word>));
+    }
+
+
+    [TestMethod]
     public void Result_ReturnsCorrectView_True()
     {
       //Arrange
