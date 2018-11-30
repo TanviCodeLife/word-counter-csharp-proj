@@ -12,3 +12,7 @@
 /Users/Tanvi/Desktop/word-counter-csharp-proj/WordCounter/obj/Debug/netcoreapp1.1/WordCounter.AssemblyInfo.cs
 /Users/Tanvi/Desktop/word-counter-csharp-proj/WordCounter/obj/Debug/netcoreapp1.1/WordCounter.dll
 /Users/Tanvi/Desktop/word-counter-csharp-proj/WordCounter/obj/Debug/netcoreapp1.1/WordCounter.pdb
+/Users/Tanvi/Desktop/word-counter-csharp-proj/WordCounter/obj/Debug/netcoreapp1.1/WordCounter.csprojAssemblyReference.cache
+/Users/Tanvi/Desktop/word-counter-csharp-proj/WordCounter/obj/Debug/netcoreapp1.1/WordCounter.AssemblyInfoInputs.cache
+/Users/Tanvi/Desktop/word-counter-csharp-proj/WordCounter/bin/Debug/netcoreapp1.1/WordCounter.runtimeconfig.json
+/Users/Tanvi/Desktop/word-counter-csharp-proj/WordCounter/bin/Debug/netcoreapp1.1/WordCounter.runtimeconfig.dev.json
