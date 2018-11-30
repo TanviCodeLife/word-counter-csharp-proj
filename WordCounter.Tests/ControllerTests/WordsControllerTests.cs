@@ -18,10 +18,10 @@ namespace WordCounter.Tests
       WordsController controller = new WordsController();
 
       //Act
-      ActionResult newView = controller.New();
+      ActionResult indexView = controller.Index();
 
       //Assert
-      Assert.IsInstanceOfType(newView, typeof(ViewResult));
+      Assert.IsInstanceOfType(indexView, typeof(ViewResult));
     }
 
     [TestMethod]
@@ -52,7 +52,7 @@ namespace WordCounter.Tests
       string resultName = actionResult.ActionName;
 
       //Assert
-      Assert.AreEqual(resultName, "New");
+      Assert.AreEqual(resultName, "Index");
     }
 
 

@@ -20,7 +20,7 @@ namespace WordCounter.Controllers
       string convertedStringToLower = testWord.ConvertStringToLowerCase();
       string parsedStringToCheck = testWord.RemoveSpecialCharactersFromInput(convertedStringToLower);
       int actualCount = testWord.RunCountParseLogicBasedOnWordOrSentenceInput(convertedLetterOrWordToLower, parsedStringToCheck);
-      return RedirectToAction("New");
+      return RedirectToAction("Index");
     }
 
   }
