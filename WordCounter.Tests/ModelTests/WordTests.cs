@@ -131,6 +131,25 @@ namespace WordCounter.Tests
       CollectionAssert.AreEqual(newWordList, resultWordList);
     }
 
+    [TestMethod]
+    public void Find_ReturnsCorrectItem_BagItem()
+    {
+      //Arrange
+      //Arrange
+      string inputLetterOrWord01 = "A";
+      string inputStringToCheck01 = "CAT";
+      Word testWord01 = new Word(inputLetterOrWord01, inputStringToCheck01);
+      string inputLetterOrWord02 = "cat";
+      string inputStringToCheck02 = "this is a cat";
+      Word testWord02 = new Word(inputLetterOrWord02, inputStringToCheck02);
+      List<Word> newWordList = new List<Word> { testWord01, testWord02 };
+
+      //Act
+      Word result = Word.Find(1);
+
+      //Assert
+      Assert.AreEqual(testWord02, result);
+    }
 
     [TestMethod]
     public void ConvertLetterOrWordToLowerCase_ConvertToLower_LowerCaseString()

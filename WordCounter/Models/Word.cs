@@ -43,11 +43,6 @@ namespace WordCounter.Models
       return _instances;
     }
 
-    public static Word Find(int searchId)
-    {
-      return _instances[searchId-1];
-    }
-
     public static void ClearAll()
     {
       _instances.Clear();
@@ -57,6 +52,12 @@ namespace WordCounter.Models
     {
       return _id;
     }
+
+    public static Word Find(int searchId)
+    {
+      return _instances[searchId];
+    }
+
 
     public string ConvertLetterOrWordToLowerCase(){
       string letterOrWord = _inputLetterOrWord.ToLower();
