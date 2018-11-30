@@ -6,13 +6,12 @@ namespace WordCounter.Controllers
 {
   public class WordsController : Controller
   {
-    [HttpGet("/words")]
-    public ActionResult Index()
+    [HttpGet("/words/new")]
+    public ActionResult New()
     {
-      List<BagItem> allBagItem = BagItem.GetAll();
-      //return View(allBagItem);
-      // return new EmptyResult(); Fail CorrectView test
-      //return View(0); Fail CorrectModelType Test
+      //return View();
+      return new EmptyResult();
     }
+
   }
 }
