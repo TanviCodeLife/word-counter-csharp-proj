@@ -10,7 +10,7 @@ namespace WordCounter.Controllers
     public ActionResult Index()
     {
       List<Word> allWords = Word.GetAll();
-      return View(0);
+      return View(allWords);
     }
 
     [HttpPost("/words-result")] //equals Create
