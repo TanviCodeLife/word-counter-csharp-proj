@@ -38,8 +38,6 @@ namespace WordCounter.Models
 
     public static List<Word> GetAll()
     {
-      Word newWord = new Word("Cat", "this is a cat");
-      _instances = new List<Word>{ newWord };
       return _instances;
     }
 
