@@ -12,7 +12,7 @@ namespace WordCounter.Tests
   {
 
     [TestMethod]
-    public void New_ReturnsCorrectView_True()
+    public void Index_ReturnsCorrectView_True()
     {
       //Arrange
       WordsController controller = new WordsController();

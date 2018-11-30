@@ -6,13 +6,13 @@ namespace WordCounter.Controllers
 {
   public class WordsController : Controller
   {
-    [HttpGet("/words/new")]
-    public ActionResult New()
+    [HttpGet("/words")] //equals New
+    public ActionResult Index()
     {
       return View();
     }
 
-    [HttpPost("/words-result")]
+    [HttpPost("/words-result")] //equals Create
     public ActionResult Result(string inputLetterOrWord, string inputStringToCheck)
     {
       Word testWord = new Word(inputLetterOrWord, inputStringToCheck);
