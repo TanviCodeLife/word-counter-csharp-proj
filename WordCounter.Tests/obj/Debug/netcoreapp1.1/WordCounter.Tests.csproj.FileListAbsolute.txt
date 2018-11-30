@@ -26,3 +26,6 @@
 /Users/Tanvi/Desktop/word-counter-csharp-proj/WordCounter.Tests/bin/Debug/netcoreapp1.1/WordCounter.Tests.pdb
 /Users/Tanvi/Desktop/word-counter-csharp-proj/WordCounter.Tests/bin/Debug/netcoreapp1.1/WordCounter.dll
 /Users/Tanvi/Desktop/word-counter-csharp-proj/WordCounter.Tests/bin/Debug/netcoreapp1.1/WordCounter.pdb
+/Users/Tanvi/Desktop/word-counter-csharp-proj/WordCounter.Tests/obj/Debug/netcoreapp1.1/WordCounter.Tests.csprojAssemblyReference.cache
+/Users/Tanvi/Desktop/word-counter-csharp-proj/WordCounter.Tests/obj/Debug/netcoreapp1.1/WordCounter.Tests.AssemblyInfoInputs.cache
+/Users/Tanvi/Desktop/word-counter-csharp-proj/WordCounter.Tests/obj/Debug/netcoreapp1.1/WordCounter.Tests.csproj.CopyComplete
