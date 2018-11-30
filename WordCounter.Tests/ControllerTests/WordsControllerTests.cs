@@ -39,6 +39,22 @@ namespace WordCounter.Tests
       Assert.IsInstanceOfType(resultView, typeof(ViewResult));
     }
 
+    [TestMethod]
+    public void Result_HasCorrectModelType_Word()
+    {
+      //Arrange
+      WordsController controller = new WordsController();
+      string inputLetterOrWord = "cAt";
+      string inputStringToCheck = "there is a bLack caT and a white CAt in the cathedral!!";
+      ViewResult resultView = controller.Result(inputLetterOrWord, inputStringToCheck) as ViewResult;
+
+      //Act
+      var result = resultView.ViewData.Model;
+
+      //Assert
+      Assert.IsInstanceOfType(result, typeof(object));
+    }
+
 
 
 

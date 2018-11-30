@@ -13,9 +13,10 @@
         @{
         string convertedLetterOrWordToLower = Model.ConvertLetterOrWordToLowerCase();
         string convertedStringToLower = Model.ConvertStringToLowerCase();
-        string parsedStringToCheck = Model.RemoveSpecialCharactersFromInput(convertedStringToLower);
+        string parsedLetterOrWordToCheck =
         Model.RemoveSpecialCharactersFromInput(convertedLetterOrWordToLower);
-        int actualCount = Model.RunCountParseLogicBasedOnWordOrSentenceInput(convertedLetterOrWordToLower, parsedStringToCheck);
+        string parsedStringToCheck = Model.RemoveSpecialCharactersFromInput(convertedStringToLower);
+        int actualCount = Model.RunCountParseLogicBasedOnWordOrSentenceInput(parsedLetterOrWordToCheck, parsedStringToCheck);
         }
           @if (actualCount == 0)
           {
