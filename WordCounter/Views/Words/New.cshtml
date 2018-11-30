@@ -1,0 +1,25 @@
+@{
+  Layout = "_Layout";
+}
+<div class="container">
+  <div class="jumbotron">
+    <h1>Enter a word and a phrase below</h1>
+  </div>
+  <form id="word-count" action="/words" method="post">
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <label for="inputLetterOrWord">Enter a word:</label>
+        <input type="text" class="form-control" id="inputLetterOrWord" name="inputLetterOrWord" placeholder="Enter a string">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <label for="inputStringToCheck">Enter a phrase:</label>
+        <input type="text" class="form-control" id="inputStringToCheck" name="inputStringToCheck" placeholder="Enter a string">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" id = "alignButton">submit</button>
+  </form>
+</form>
+</div>
+</div>

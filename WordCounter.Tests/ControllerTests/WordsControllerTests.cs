@@ -23,5 +23,6 @@ namespace WordCounter.Tests
       //Assert
       Assert.IsInstanceOfType(newView, typeof(ViewResult));
     }
+
   }
 }
