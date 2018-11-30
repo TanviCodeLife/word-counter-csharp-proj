@@ -16,10 +16,6 @@ namespace WordCounter.Controllers
     public ActionResult Result(string inputLetterOrWord, string inputStringToCheck)
     {
       Word testWord = new Word(inputLetterOrWord, inputStringToCheck);
-      string convertedLetterOrWordToLower = testWord.ConvertLetterOrWordToLowerCase();
-      string convertedStringToLower = testWord.ConvertStringToLowerCase();
-      string parsedStringToCheck = testWord.RemoveSpecialCharactersFromInput(convertedStringToLower);
-      int actualCount = testWord.RunCountParseLogicBasedOnWordOrSentenceInput(convertedLetterOrWordToLower, parsedStringToCheck);
       return RedirectToAction("Index");
     }
 
