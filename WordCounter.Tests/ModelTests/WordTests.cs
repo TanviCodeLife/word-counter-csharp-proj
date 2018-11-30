@@ -148,7 +148,7 @@ namespace WordCounter.Tests
       Word result = Word.Find(1);
 
       //Assert
-      Assert.AreEqual(testWord02, result);
+      Assert.AreEqual(testWord01, result);
     }
 
     [TestMethod]

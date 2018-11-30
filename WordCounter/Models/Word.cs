@@ -9,6 +9,7 @@ namespace WordCounter.Models
     private string _inputStringToCheck;
     private int _id;
     private static List<Word> _instances = new List<Word> {};
+    private int _count;
 
     public Word(string inputLetterOrWord, string inputStringToCheck)
     {
@@ -16,6 +17,7 @@ namespace WordCounter.Models
       _inputStringToCheck = inputStringToCheck;
       _id = _instances.Count;
       _instances.Add(this);
+      _count = 0;
     }
 
     public string GetInputLetterOrWord()
@@ -123,18 +125,18 @@ namespace WordCounter.Models
 
     public int RunCountParseLogicBasedOnWordOrSentenceInput(string inputStringToMatch, string inputWordOrSentenceToParse)
     {
-      int count = 0;
+      // int count = 0;
       if(inputWordOrSentenceToParse.Contains(" "))
       {
         List<string> listFromSentence = new List<string>{};
         listFromSentence = this.ConvertSentenceToList(inputWordOrSentenceToParse);
-        count = this.CheckSentenceContainsWordToGetCount(listFromSentence, inputStringToMatch);
+        _count = this.CheckSentenceContainsWordToGetCount(listFromSentence, inputStringToMatch);
       }
       else
       {
-        count = this.CheckWordContainsLetterToGetCount(inputStringToMatch, inputWordOrSentenceToParse);
+        _count = this.CheckWordContainsLetterToGetCount(inputStringToMatch, inputWordOrSentenceToParse);
       }
-       return count;
+       return _count;
     }
 
   }
