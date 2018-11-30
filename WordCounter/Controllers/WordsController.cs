@@ -16,7 +16,7 @@ namespace WordCounter.Controllers
     public ActionResult Result(string inputLetterOrWord, string inputStringToCheck)
     {
       Word testWord = new Word(inputLetterOrWord, inputStringToCheck);
-      return RedirectToAction("Index");
+      return new EmptyResult();
     }
 
   }

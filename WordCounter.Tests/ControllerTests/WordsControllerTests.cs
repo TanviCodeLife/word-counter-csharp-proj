@@ -25,7 +25,7 @@ namespace WordCounter.Tests
     }
 
     [TestMethod]
-    public void Result_ReturnsCorrectActionType_True()
+    public void Result_ReturnsCorrectView_True()
     {
       //Arrange
       WordsController controller = new WordsController();
@@ -36,24 +36,9 @@ namespace WordCounter.Tests
       ActionResult resultView = controller.Result(inputLetterOrWord, inputStringToCheck);
 
       //Assert
-      Assert.IsInstanceOfType(resultView, typeof(RedirectToActionResult));
+      Assert.IsInstanceOfType(resultView, typeof(ViewResult));
     }
 
-    [TestMethod]
-    public void Result_RedirectsToCorrectAction_New()
-    {
-      //Arrange
-      WordsController controller = new WordsController();
-      string inputLetterOrWord = "cAt";
-      string inputStringToCheck = "there is a bLack caT and a white CAt in the cathedral!!";
-      RedirectToActionResult actionResult = controller.Result(inputLetterOrWord, inputStringToCheck) as RedirectToActionResult;
-
-      //Act
-      string resultName = actionResult.ActionName;
-
-      //Assert
-      Assert.AreEqual(resultName, "Index");
-    }
 
 
 

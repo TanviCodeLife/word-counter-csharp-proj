@@ -1,0 +1,36 @@
+@{
+  Layout = "_Layout";
+}
+
+<div class="row">
+  <div class="col-lg-8">
+    <div class="card" id="result">
+      <div class="card-header">
+        <h4 class="card-title">Your Word Count Here!</h4>
+      </div>
+      <div class="card-body">
+        @using WordCounter.Models;
+        @{
+        string convertedLetterOrWordToLower = Model.ConvertLetterOrWordToLowerCase();
+        string convertedStringToLower = Model.ConvertStringToLowerCase();
+        string parsedStringToCheck = Model.RemoveSpecialCharactersFromInput(convertedStringToLower);
+        Model.RemoveSpecialCharactersFromInput(convertedLetterOrWordToLower);
+        int actualCount = Model.RunCountParseLogicBasedOnWordOrSentenceInput(convertedLetterOrWordToLower, parsedStringToCheck);
+        }
+          @if (actualCount == 0)
+          {
+            <h3>Word: @Model.GetInputLetterOrWord()</h3>
+            <h3>Phrase: @Model.GetInputStringToCheck()</h3>
+            <p>Your word @Model.GetInputLetterOrWord() did not appear in the given phrase.</p>
+          }
+          else
+          {
+            <h3>Word: @Model.GetInputLetterOrWord()</h3>
+            <h3>Phrase: @Model.GetInputStringToCheck()</h3>
+            <p>Your word @Model.GetInputLetterOrWord() appears @actualCount times in your phrase .</p>
+          }
+          <p><a href='/'>Back home</a></p>
+        </div>
+      </div>
+    </div>
+   </div>

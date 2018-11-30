@@ -5,7 +5,7 @@
   <div class="jumbotron">
     <h1>Enter a word and a phrase below</h1>
   </div>
-  <form id="word-count" action="/words-result" method="post">
+  <form action="/words-result" method="post">
     <div class="form-row">
       <div class="form-group col-md-12">
         <label for="inputLetterOrWord">Enter a word:</label>
@@ -20,25 +20,4 @@
     </div>
     <button type="submit" class="btn btn-primary" id= "alignButton">Get Count!</button>
   </form>
-  <div class="row">
-    <div class="col-lg-8">
-      <div class="card" id="result">
-        <div class="card-header">
-          <h4 class="card-title">Your Word Count Here!</h4>
-        </div>
-        <div class="card-body">
-          <!-- @{
-            if (Model == 0)
-            {
-              <h3>Word is not present in your phrase!</h3>
-            }
-            else
-            {
-              <h3>Word is not present in your phrase!</h3>
-            } -->
-            <p><a href='/'>Back home</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
