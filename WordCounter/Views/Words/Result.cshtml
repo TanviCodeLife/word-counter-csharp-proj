@@ -3,22 +3,22 @@
 }
 
 <div class="container">
-<div class="row">
-  <div class="col-lg-8">
-    <div class="card" id="result">
-      <div class="card-header">
-        <h4 class="card-title">Your Word Count Here!</h4>
-      </div>
-      <div class="card-body">
-        @using WordCounter.Models;
-        @{
-        string convertedLetterOrWordToLower = Model.ConvertLetterOrWordToLowerCase();
-        string convertedStringToLower = Model.ConvertStringToLowerCase();
-        string parsedLetterOrWordToCheck =
-        Model.RemoveSpecialCharactersFromInput(convertedLetterOrWordToLower);
-        string parsedStringToCheck = Model.RemoveSpecialCharactersFromInput(convertedStringToLower);
-        int actualCount = Model.RunCountParseLogicBasedOnWordOrSentenceInput(parsedLetterOrWordToCheck, parsedStringToCheck);
-        }
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="card" id="result">
+        <div class="card-header">
+          <h4 class="card-title">Your Word Count Here!</h4>
+        </div>
+        <div class="card-body">
+          @using WordCounter.Models;
+          @{
+            string convertedLetterOrWordToLower = Model.ConvertLetterOrWordToLowerCase();
+            string convertedStringToLower = Model.ConvertStringToLowerCase();
+            string parsedLetterOrWordToCheck =
+            Model.RemoveSpecialCharactersFromInput(convertedLetterOrWordToLower);
+            string parsedStringToCheck = Model.RemoveSpecialCharactersFromInput(convertedStringToLower);
+            int actualCount = Model.RunCountParseLogicBasedOnWordOrSentenceInput(parsedLetterOrWordToCheck, parsedStringToCheck);
+          }
           @if (actualCount == 0)
           {
             <h3>Word: @Model.GetInputLetterOrWord()</h3>
@@ -31,9 +31,33 @@
             <h3>Phrase: @Model.GetInputStringToCheck()</h3>
             <p>Your word @Model.GetInputLetterOrWord() appears @actualCount times in your phrase .</p>
           }
+
+          <h1>Previous Word Count Plays</h1>
+          <ul>
+
+            @if (Model.Count == 0)
+            {
+              <p>You have no items in your Bag</p>
+            }
+            @if (Model.Count != 0)
+            {
+              @foreach (BagItem item in Model)
+              {
+
+                <li><a href="/bag-items/@item.GetId()">@item.GetNameOfItem()</a></li>
+                <li>@item.GetPrice()</li>
+                <li>@item.GetWeight()</li>
+                <li>@item.GetPacked()</li>
+                <p>--------------</p>
+              }
+            }
+
+          </ul>
+          <a href="/bag-items/new">Add a new item.</a>
+
           <p><a href='/'>Back home</a></p>
         </div>
       </div>
     </div>
-   </div>
- </div>
+  </div>
+</div>

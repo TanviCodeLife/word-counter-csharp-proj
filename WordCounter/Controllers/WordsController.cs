@@ -9,8 +9,7 @@ namespace WordCounter.Controllers
     [HttpGet("/words")] //equals New
     public ActionResult Index()
     {
-      List<Word> allWords = Word.GetAll();
-      return View(allWords);
+      return View();
     }
 
     [HttpPost("/words-result")] //equals Create
@@ -19,6 +18,15 @@ namespace WordCounter.Controllers
       Word testWord = new Word(inputLetterOrWord, inputStringToCheck);
       return View(testWord);
     }
+
+    [HttpGet("/words-result")] //equals Index
+    public ActionResult AllPlays()
+    {
+      List<Word> allWords = Word.GetAll();
+      // return View("Result", allWords);
+      return new EmptyResult();
+    }
+
 
   }
 }

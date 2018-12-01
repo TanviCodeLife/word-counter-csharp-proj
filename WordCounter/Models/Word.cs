@@ -139,5 +139,10 @@ namespace WordCounter.Models
        return _count;
     }
 
+    public int GetCount()
+    {
+      return _count;
+    }
+
   }
 }
