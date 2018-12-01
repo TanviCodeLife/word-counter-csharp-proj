@@ -23,8 +23,8 @@ namespace WordCounter.Controllers
     public ActionResult AllPlays()
     {
       List<Word> allWords = Word.GetAll();
-      // return View("Result", allWords);
-      return new EmptyResult();
+      return View("Result", 1);
+
     }
 
 

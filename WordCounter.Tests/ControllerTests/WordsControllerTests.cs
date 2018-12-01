@@ -68,22 +68,19 @@ namespace WordCounter.Tests
       Assert.IsInstanceOfType(playsView, typeof(ViewResult));
     }
 
-    // [TestMethod]
-    // public void AllPlays_HasCorrectModelType_WordandPhraseList()
-    // {
-    //   //Arrange
-    //   WordsController controller = new WordsController();
-    //   ViewResult indexView = controller.Index() as ViewResult;
-    //
-    //   //Act
-    //   var result = indexView.ViewData.Model;
-    //
-    //   //Assert
-    //   Assert.IsInstanceOfType(result, typeof(List<Word>));
-    // }
+    [TestMethod]
+    public void AllPlays_HasCorrectModelType_WordandPhraseList()
+    {
+      //Arrange
+      WordsController controller = new WordsController();
+      ViewResult allPlaysView = controller.AllPlays() as ViewResult;
 
+      //Act
+      var result = allPlaysView.ViewData.Model;
 
-
+      //Assert
+      Assert.IsInstanceOfType(result, typeof(List<Word>));
+    }
 
   }
 }
