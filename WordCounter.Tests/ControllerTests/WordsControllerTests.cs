@@ -82,5 +82,19 @@ namespace WordCounter.Tests
       Assert.IsInstanceOfType(result, typeof(List<Word>));
     }
 
+    [TestMethod]
+    public void AllPlays_ToCorrectView_Result()
+    {
+      //Arrange
+      WordsController controller = new WordsController();
+      ViewResult allPlaysView = controller.AllPlays() as ViewResult;
+
+      //Act
+      string result = allPlaysView.ViewName;
+
+      //Assert
+      Assert.AreEqual(result, "Result");
+    }
+
   }
 }
