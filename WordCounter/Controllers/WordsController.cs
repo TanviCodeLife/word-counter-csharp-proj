@@ -13,7 +13,7 @@ namespace WordCounter.Controllers
       return View(allWords);
     }
 
-    [HttpPost("/words-result")] //equals Create
+    [HttpPost("/words/words-result")] //equals Create
     public ActionResult Result(string inputLetterOrWord, string inputStringToCheck)
     {
       Word testWord = new Word(inputLetterOrWord, inputStringToCheck);

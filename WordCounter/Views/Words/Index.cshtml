@@ -3,9 +3,10 @@
 }
 <div class="container">
   <div class="jumbotron">
-    <h1>Enter a word and a phrase below</h1>
+    <h1>Word Counter</h1>
+    <h3>Enter a word and a phrase below</h3>
   </div>
-  <form action="/words-result" method="post">
+  <form action="/words/words-result" method="post">
     <div class="form-row">
       <div class="form-group col-md-12">
         <label for="inputLetterOrWord">Enter a word:</label>
@@ -18,11 +19,12 @@
         <input type="text" class="form-control" id="inputStringToCheck" name="inputStringToCheck" placeholder="Enter a string" required>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary" id= "alignButton">Get Count !</button>
+    <button type="submit" class="btn btn-primary">Get Count !</button>
   </form>
-
+  <br>
+  <br>
   <h3>Previous Word Count Plays</h3>
-  <ul class="list-group">
+  <ul>
 
     @using WordCounter.Models;
     @if (Model.Count == 0)
@@ -34,14 +36,13 @@
       @foreach (Word word in Model)
       {
 
-        <li><a href="/words/@word.GetId()">@word.GetInputLetterOrWord()</a></li>
-        <li>@word.GetInputStringToCheck()</li>
-        <li>@word.GetCount()</li>
+        <li><a href="/words/@word.GetId()">Word: @word.GetInputLetterOrWord()</a></li>
+        <li>Phrase: @word.GetInputStringToCheck()</li>
+        <li>Count: @word.GetCount()</li>
         <p>--------------</p>
       }
     }
 
   </ul>
-
-  <p><a href='/'>Back home</a></p>
+  <a class="btn btn-primary" href="/" role="button">Go Back To Home Page!</a>
   </div>

@@ -1,0 +1,7 @@
+body {
+  height: 100%;
+  background-image: url("file:///Users/Tanvi/Desktop/beep-boop/img/beep.jpg");
+  background-position: top;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
