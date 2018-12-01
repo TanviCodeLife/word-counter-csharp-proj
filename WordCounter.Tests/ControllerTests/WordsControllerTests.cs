@@ -25,6 +25,20 @@ namespace WordCounter.Tests
     }
 
     [TestMethod]
+    public void Index_HasCorrectModelType_WordandPhraseList()
+    {
+      //Arrange
+      WordsController controller = new WordsController();
+      ViewResult indexView = controller.Index() as ViewResult;
+
+      //Act
+      var result = indexView.ViewData.Model;
+
+      //Assert
+      Assert.IsInstanceOfType(result, typeof(List<Word>));
+    }
+
+    [TestMethod]
     public void Result_ReturnsCorrectView_True()
     {
       //Arrange
@@ -53,47 +67,6 @@ namespace WordCounter.Tests
 
       //Assert
       Assert.IsInstanceOfType(result, typeof(object));
-    }
-
-    [TestMethod]
-    public void AllPlays_ReturnsCorrectView_True()
-    {
-      //Arrange
-      WordsController controller = new WordsController();
-
-      //Act
-      ActionResult playsView = controller.AllPlays();
-
-      //Assert
-      Assert.IsInstanceOfType(playsView, typeof(ViewResult));
-    }
-
-    [TestMethod]
-    public void AllPlays_HasCorrectModelType_WordandPhraseList()
-    {
-      //Arrange
-      WordsController controller = new WordsController();
-      ViewResult allPlaysView = controller.AllPlays() as ViewResult;
-
-      //Act
-      var result = allPlaysView.ViewData.Model;
-
-      //Assert
-      Assert.IsInstanceOfType(result, typeof(List<Word>));
-    }
-
-    [TestMethod]
-    public void AllPlays_ToCorrectView_Result()
-    {
-      //Arrange
-      WordsController controller = new WordsController();
-      ViewResult allPlaysView = controller.AllPlays() as ViewResult;
-
-      //Act
-      string result = allPlaysView.ViewName;
-
-      //Assert
-      Assert.AreEqual(result, "Result");
     }
 
   }

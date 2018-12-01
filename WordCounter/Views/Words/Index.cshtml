@@ -5,7 +5,6 @@
   <div class="jumbotron">
     <h1>Enter a word and a phrase below</h1>
   </div>
-
   <form action="/words-result" method="post">
     <div class="form-row">
       <div class="form-group col-md-12">
@@ -21,4 +20,28 @@
     </div>
     <button type="submit" class="btn btn-primary" id= "alignButton">Get Count !</button>
   </form>
+
+  <h3>Previous Word Count Plays</h3>
+  <ul class="list-group">
+
+    @using WordCounter.Models;
+    @if (Model.Count == 0)
+    {
+      <p>Start Playing To Add To Your List of Plays.</p>
+    }
+    @if (Model.Count != 0)
+    {
+      @foreach (Word word in Model)
+      {
+
+        <li><a href="/words/@word.GetId()">@word.GetInputLetterOrWord()</a></li>
+        <li>@word.GetInputStringToCheck()</li>
+        <li>@word.GetCount()</li>
+        <p>--------------</p>
+      }
+    }
+
+  </ul>
+
+  <p><a href='/'>Back home</a></p>
   </div>

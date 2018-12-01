@@ -7,7 +7,7 @@
     <div class="col-lg-8">
       <div class="card" id="result">
         <div class="card-header">
-          <h4 class="card-title">Your Word Count Here!</h4>
+          <h4 class="card-title">Your Word Count Is Here!</h4>
         </div>
         <div class="card-body">
           @using WordCounter.Models;
@@ -31,31 +31,7 @@
             <h3>Phrase: @Model.GetInputStringToCheck()</h3>
             <p>Your word @Model.GetInputLetterOrWord() appears @actualCount times in your phrase .</p>
           }
-
-          <h1>Previous Word Count Plays</h1>
-          <ul>
-
-            @if (Model.Count == 0)
-            {
-              <p>You have no items in your Bag</p>
-            }
-            @if (Model.Count != 0)
-            {
-              @foreach (BagItem item in Model)
-              {
-
-                <li><a href="/bag-items/@item.GetId()">@item.GetNameOfItem()</a></li>
-                <li>@item.GetPrice()</li>
-                <li>@item.GetWeight()</li>
-                <li>@item.GetPacked()</li>
-                <p>--------------</p>
-              }
-            }
-
-          </ul>
-          <a href="/bag-items/new">Add a new item.</a>
-
-          <p><a href='/'>Back home</a></p>
+         <a class="btn btn-primary" href="/words" role="button">Play Again!</a>
         </div>
       </div>
     </div>
