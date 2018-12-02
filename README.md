@@ -1,5 +1,5 @@
 # _Word Counter Project_
-#### Week 1 CSharp Independent Project at Epicodus, 10.16.2018
+#### Week 1&2 C# ASP.NET Core MVC Independent Project at Epicodus, 10.16.2018
 
 ### Created By
 * _Tanvi Garg_
@@ -69,8 +69,8 @@ Application started. Press Ctrl+C to shut down."_
 
 ### Technologies used
 1. **CSharp**
-2. **DotNet Core Framework**
-3. **MSTest BDD Workflow**
+2. **.Net Core MVC Framework**
+3. **MSTest BDD Workflow(Unit Testing for Model and Controller)**
 3. **Atom**
 4. **Command Line**
 5. **GitHub**
