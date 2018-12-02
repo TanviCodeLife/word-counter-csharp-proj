@@ -4,27 +4,28 @@
 <div class="container">
   <div class="jumbotron">
     <h1 class="display-4">Word Counter</h1>
-    <p class="lead">Enter a word and a phrase below</p>
+    <img src="img/splash.jpg" alt="Letter printing blocks" class="letter-block">
+    <p class="lead">Enter a word and a phrase below!</p>
+    <form action="/words/words-result" method="post">
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label for="inputLetterOrWord">Enter a word:</label>
+          <input type="text" class="form-control" id="inputLetterOrWord" name="inputLetterOrWord" placeholder="Enter a string" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label for="inputStringToCheck">Enter a phrase:</label>
+          <input type="text" class="form-control" id="inputStringToCheck" name="inputStringToCheck" placeholder="Enter a string" required>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary link-align">Get Count !</button>
+    </form>
   </div>
-  <form action="/words/words-result" method="post">
-    <div class="form-row">
-      <div class="form-group col-md-12">
-        <label for="inputLetterOrWord">Enter a word:</label>
-        <input type="text" class="form-control" id="inputLetterOrWord" name="inputLetterOrWord" placeholder="Enter a string" required>
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="form-group col-md-12">
-        <label for="inputStringToCheck">Enter a phrase:</label>
-        <input type="text" class="form-control" id="inputStringToCheck" name="inputStringToCheck" placeholder="Enter a string" required>
-      </div>
-    </div>
-    <button type="submit" class="btn btn-primary">Get Count !</button>
-  </form>
   <br>
   <br>
-  <h3>Previous Word Count Plays</h3>
-  <ul>
+  <h3 class="align">Previous Word Count Plays</h3>
+  <ul class="align">
 
     @using WordCounter.Models;
     @if (Model.Count == 0)
@@ -44,5 +45,5 @@
     }
 
   </ul>
-  <a class="btn btn-primary" href="/" role="button">Go Back To Home Page!</a>
+  <a class="btn btn-primary link-align" href="/" role="button">Go Back To Home Page!</a>
   </div>
