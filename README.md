@@ -1,4 +1,4 @@
-# _Word Counter_
+# _Word Counter Project_
 #### Week 1 CSharp Independent Project at Epicodus, 10.16.2018
 
 ### Created By
@@ -42,27 +42,30 @@
 * _Input2: this is a cat_
 * _Output: True_
 * _**Takes in input1 and input2 and compares for multiple occurences of input1 in input2 using a loop. Output is the count of occurences**_
-* _Input1: "cat"
+* _Input1: "cat"_
 * _Input2: "this is a black cat with a white cat"_
 * _Output: 2_
 * _**Takes in mixed case inputs and compares for multiple occurences of input1 in input2 using a loop. Output is the count of occurences**_
-* _Input1: "cat"
+* _Input1: "cat"_
 * _Input2: "this is a black CAt with a White cat"_
 * _Output: 2_
 * _**Takes in mixed case inputs and compares for multiple occurences of input1 in input2 while ignoring words that might be superset of the input1 like "cat" in "cat"hedral using a loop. Output is the count of occurences**_
-* _Input1: "cat"
+* _Input1: "cat"_
 * _Input2: "this is a black CAt with a White cat in a cathedral"_
 * _Output: 2_
 * _**Add functionality to remove special characters and split a sentence into an array/list**_
-* _Input: "I'm in a cathedral"
+* _Input: "I'm in a cathedral"_
 * _Output: "I m in a cathedral"_
 
 ### Complete setup/installation instructions
 1. _Go to GitHub profile and project @ [TanviCodeLife](https://github.com/TanviCodeLife/word-counter-csharp-proj)_
-2. _Use #git clone <project url> command to pull it to a local repository in your Home directory._
-3. _Go to project folder and cd into word-counter-csharp-proj/WordCounter.Solution/WordCounter.Tests directory from your bash terminal_
-4. _run #dotnet test_
-4. _All test results will be displayed in the console._
+2. _Use #git clone <project url> command to pull it to a local repository in your Home directory using a bash terminal._
+3. _Go to project folder and cd into word-counter-csharp-proj/WordCounter directory from your bash terminal_
+4. _run #dotnet run_
+5. _Wait till you see this message display in you bash terminal - "Now listening on: http://localhost:5000
+Application started. Press Ctrl+C to shut down."_
+6. _Copy the local host link you see in the message for eg http://localhost:5000 and paste it into your web browser address bar._
+7. _Browse through the project._
 
 ### Technologies used
 1. **CSharp**
