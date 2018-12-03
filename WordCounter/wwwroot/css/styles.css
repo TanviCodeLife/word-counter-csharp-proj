@@ -16,3 +16,7 @@ text-align: center;
   margin-left: 40%;
   margin-right: 40%;
 }
+
+.list-group .list-group-item .align-list{
+  margin-left: 20%;
+}/*some styles not working so added inline styles*/
