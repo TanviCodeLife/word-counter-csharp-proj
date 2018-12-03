@@ -5,7 +5,8 @@
 <div class="container">
   <div class="jumbotron">
     <h1 class="display-4">Word Counter Results</h1>
-    <img src="img/splash.jpg" alt="Letter printing blocks" class="letter-block">
+    <!-- <img src="img/splash.jpg" alt="Letter printing blocks" class="letter-block"> -->
+
     @using WordCounter.Models;
     @{
       string convertedLetterOrWordToLower = Model.ConvertLetterOrWordToLowerCase();
@@ -28,6 +29,7 @@
       <h3 class="align">Phrase: @Model.GetInputStringToCheck()</h3>
       <p class="align">Your word @Model.GetInputLetterOrWord() appears @actualCount times in your phrase .</p>
     }
-    <a class="btn btn-primary link-align" href="/words" role="button">Play Again!</a>
+    <br>
+    <a class="btn btn-primary" href="/words" role="button" style="margin-left: 45%">Play Again!</a>
   </div>
 </div>
