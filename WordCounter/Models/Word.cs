@@ -71,22 +71,16 @@ namespace WordCounter.Models
       return stringToCheck;
     }
 
-    public int CheckWordContainsLetterToGetCount(string inputLetter, string inputString)
+
+    public List<string> ConvertWordToListOfLetters(string inputWord)
     {
-      int countForLetters = 0;
-      for (int i = 0; i < inputString.Length; i++)
+      List<string> listOfLetters = new List<string>{};
+      foreach(char c in inputWord)
       {
-        String charToString = inputString[i].ToString();
-
-        if(charToString == inputLetter)
-        {
-          countForLetters++;
-        }
-
+        listOfLetters. Add(c.ToString());
       }
-      return countForLetters;
+      return listOfLetters;
     }
-
 
     public List<string> ConvertSentenceToList(string stringToCheck)
     {
@@ -95,18 +89,19 @@ namespace WordCounter.Models
       return listFromSentencetoCompare;
     }
 
-    public int CheckSentenceContainsWordToGetCount(List<string> listFromSentence, string letterOrWordToFind)
+
+    public int CheckSentenceOrWordContainsWordOrLetterToGetCount(List<string> listFromSentenceOrWord, string letterOrWordToFind)
     {
-      int countForWords = 0;
-      foreach (string wordToCompare in listFromSentence)
+      int countForWordsOrLetters = 0;
+      foreach (string wordOrLetterToCompare in listFromSentenceOrWord)
       {
-        if(wordToCompare == letterOrWordToFind)
+        if(wordOrLetterToCompare == letterOrWordToFind)
         {
-          countForWords++;
+          countForWordsOrLetters++;
         }
 
       }
-      return countForWords;
+      return countForWordsOrLetters;
     }
 
     public string RemoveSpecialCharactersFromInput(string stringToParse)
@@ -126,16 +121,16 @@ namespace WordCounter.Models
     public int RunCountParseLogicBasedOnWordOrSentenceInput(string inputStringToMatch, string inputWordOrSentenceToParse)
     {
       // int count = 0;
+      List<string> listFromSentenceOrWord = new List<string>{};
       if(inputWordOrSentenceToParse.Contains(" "))
       {
-        List<string> listFromSentence = new List<string>{};
-        listFromSentence = this.ConvertSentenceToList(inputWordOrSentenceToParse);
-        _count = this.CheckSentenceContainsWordToGetCount(listFromSentence, inputStringToMatch);
+        listFromSentenceOrWord = this.ConvertSentenceToList(inputWordOrSentenceToParse);
       }
       else
       {
-        _count = this.CheckWordContainsLetterToGetCount(inputStringToMatch, inputWordOrSentenceToParse);
+        listFromSentenceOrWord = this.ConvertWordToListOfLetters(inputWordOrSentenceToParse);
       }
+      _count = this.CheckSentenceOrWordContainsWordOrLetterToGetCount(listFromSentenceOrWord, inputStringToMatch);
        return _count;
     }
 

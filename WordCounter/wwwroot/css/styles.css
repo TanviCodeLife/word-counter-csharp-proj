@@ -15,3 +15,8 @@ text-align: center;
 .link-align{
   margin-left: 35%;
 }
+
+.list-group-item{
+  margin-left: 25%;
+  margin-right: 25%;
+}

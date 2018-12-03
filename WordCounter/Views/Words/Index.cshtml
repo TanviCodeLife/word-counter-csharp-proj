@@ -23,27 +23,27 @@
     </form>
   </div>
   <br>
-  <br>
   <h3 class="align">Previous Word Count Plays</h3>
-  <ul class="align">
+    <ul class="align list-group">
 
-    @using WordCounter.Models;
-    @if (Model.Count == 0)
-    {
-      <p>Start Playing To Add To Your List of Plays.</p>
-    }
-    @if (Model.Count != 0)
-    {
-      @foreach (Word word in Model)
+      @using WordCounter.Models;
+      @if (Model.Count == 0)
       {
-
-        <li><a href="/words/@word.GetId()">Word: @word.GetInputLetterOrWord()</a></li>
-        <li>Phrase: @word.GetInputStringToCheck()</li>
-        <li>Count: @word.GetCount()</li>
-        <p>--------------</p>
+        <p>Start Playing To Add To Your List of Plays.</p>
       }
-    }
+      @if (Model.Count != 0)
+      {
+        @foreach (Word word in Model)
+        {
+          <div class="list-group-item">
+            <li>Word: @word.GetInputLetterOrWord()</a></li>
+            <li>Phrase: @word.GetInputStringToCheck()</li>
+            <li>Count: @word.GetCount()</li>
+          </div>
+        }
+      }
 
-  </ul>
-  <a class="btn btn-primary link-align" href="/" role="button">Go Back To Home Page!</a>
+    </ul>
   </div>
+  <a class="btn btn-primary link-align" href="/" role="button">Go Back To Home Page!</a>
+</div>
